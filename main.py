@@ -12,7 +12,6 @@ import sqlite3
 import streamlit as st
 from PIL import Image
 
-
 def main():
     local_css("style.css")
     load_custom_css()
@@ -23,19 +22,19 @@ def main():
         create_products_table(conn)  # Create the products table
 
     # Create columns for the title, tagline, and logo
-    col1, col2 = st.columns([3, 1])
+    col1, col2 = st.columns([4, 2])
 
     # Title and tagline in the first column with top alignment using CSS
     col1.markdown("""
-        <div style='display: flex; flex-direction: column; justify-content: start;'>
-            <h1 style='font-size: 50px;'>ReLife<sup style='vertical-align: super; font-size: 10px;'>TM</sup></h1>
-            <h3 style='color: grey; font-style: italic; font-size: 20px;'>Renewing Value, Reducing Waste</h3>
+        <div style='height: 100%; display: flex; flex-direction: column; justify-content: flex-start;'>
+            <h1 style='font-size: 50px; margin-bottom: -15px;'>ReLife<sup style='vertical-align: super; font-size: 10px;'>TM</sup></h1>
+            <h3 style='color: grey; font-style: italic; font-size: 20px; margin-top: -15px;'>Renewing Value, Reducing Waste</h3>
         </div>
         """, unsafe_allow_html=True)
-
+    
     # Logo in the second column
     logo = Image.open('logo.png')
-    col2.image(logo, width=150, use_column_width='auto')
+    col2.image(logo, width=150, use_column_width=False)
 
     
     if 'logged_in' not in st.session_state or not st.session_state['logged_in']:
