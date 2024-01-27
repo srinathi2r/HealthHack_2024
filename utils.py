@@ -56,33 +56,36 @@ def find_most_frequent_items(df):
 
 
 def plot_most_frequent_transactions(df):
- """
- Plots the most frequently bought and sold items for each location.
- Args:
- df (DataFrame): DataFrame containing the most frequent items data.
- """
- fig, ax = plt.subplots(figsize=(10, 6))
+    """
+    Plots the most frequently bought and sold items for each location.
+    Args:
+    df (DataFrame): DataFrame containing the most frequent items data.
+    """
+    print(df['Location'].value_counts())
+    fig, ax = plt.subplots(figsize=(10, 6))
 
- # Bar plot for each location
- locations = df['Location'].unique()
- for loc in locations:
-     loc_data = df[df['Location'] == loc]
-     ax.bar(loc + ' - Buy', loc_data['Buy Count'].values[0], color='blue')
-     ax.bar(loc + ' - Sell', loc_data['Sell Count'].values[0], color='red')
+    # Bar plot for each location
+    locations = df['Location'].unique()
+    n_bars = len(locations) * 2  # Two bars (buy and sell) per location
+    bar_width = 0.35
+    index = np.arange(0, n_bars, 2)  # Space out the locations
 
- ax.set_xlabel('Location and Transaction Type')
- ax.set_ylabel('Transaction Count')
- ax.set_title('Most Frequently Bought and Sold Items per Location')
- bar_width = 0.35
- n_locations = len(locations)
- index = np.arange(n_locations)
- ax.set_xticks(index + bar_width / 2)
- ax.legend(['Buy', 'Sell'], loc='upper right')
- plt.xticks(rotation=45)
- st.pyplot(fig)
- 
- 
- 
+    for i, loc in enumerate(locations):
+        loc_data = df[df['Location'] == loc]
+        ax.bar(index[i], loc_data['Buy Count'].values[0], width=bar_width, color='orange', label='Buy' if i == 0 else "")
+        ax.bar(index[i] + bar_width, loc_data['Sell Count'].values[0], width=bar_width, color='gray', label='Sell' if i == 0 else "")
+
+    ax.set_xlabel('Department and Transaction Type')
+    ax.set_ylabel('Transaction Count')
+    
+    # Set the position of the x-ticks
+    ax.set_xticks(index + bar_width / 2)
+    ax.set_xticklabels([f'{loc} - Buy/Sell' for loc in locations])
+
+    ax.legend(loc='upper right')
+    plt.xticks(rotation=45)
+    st.pyplot(fig)
+  
 def get_expiry_status(expiry_date_str):
     """
     Determines the expiry status of a product based on its expiry date.
