@@ -147,7 +147,6 @@ def admin_view_by_users(conn):
     """
     Displays visualizations for the admin view, including cost saved by location and mock transaction data.
     """
-    st.header("Admin View")
 
     # Fetch and visualize cost data by location
     c = conn.cursor()
