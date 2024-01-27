@@ -8,7 +8,7 @@ Created on Thu Jan 25 11:47:02 2024
 import os
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from authentication import generate_verification_code, add_user, send_verification_email, verify_email_code, verify_login
 from utils import generate_mock_transaction_data, find_most_frequent_items, plot_most_frequent_transactions, get_expiry_status
 
