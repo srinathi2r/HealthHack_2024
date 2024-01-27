@@ -165,7 +165,7 @@ def admin_view_by_users(conn):
                     va='bottom', ha='center', 
                     color='brown', fontweight='bold', fontsize=12)  # Adjust color, weight, and size as needed
 
-        ax.set_xlabel('Location')
+        ax.set_xlabel('Department')
         ax.set_ylabel('Total Cost')
         st.subheader("Potential Cost Saved by Department")
         st.pyplot(fig)
