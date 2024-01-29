@@ -35,7 +35,7 @@ def send_verification_email(email, verification_code):
         print(response.body)
         print(response.headers)
     except Exception as e:
-        print("Email Send Error:", e.message)
+        print("Email Send Error:", e)
 
 
 def generate_verification_code():
