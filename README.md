@@ -28,7 +28,23 @@ Verification Code Generation: Generates unique verification codes for email veri
 Email Verification Status Update: Updates the database to reflect the verification status of a user's email, further tying into the app's security measures.
 
 By encapsulating these functionalities, authentication.py lays the foundation for a secure user experience, ensuring that user data is handled securely and responsibly. It interacts with the database to manage user information and authentication states, playing a critical role in maintaining the integrity and security of the ReLife application.
-    - `ui_components.py`: Defines the user interface components, such as forms and view functions.
+    - `ui_components.py`: This module contains the definition and implementation of the user interface components used within the ReLife application. It leverages the Streamlit library to create a seamless and interactive user experience.
+signup_form(conn): Renders the sign-up form and processes new user registrations. It integrates with the authentication module to manage user credentials and verification processes.
+
+login_form(conn): Provides the login interface, authenticating users against stored credentials in the database. Upon successful authentication, it updates the session state to reflect the user's logged-in status.
+
+logout(): Resets the session state, effectively logging the user out of the application.
+
+add_product_form(conn, user_name): Displays a product submission form allowing users to add new product entries to the database, including uploading images for the products.
+
+admin_view_by_users(conn): Exclusive to admin users, this function presents aggregated data visualizations such as cost savings by department and most frequently bought and sold items, utilizing matplotlib for charting.
+
+display_products(conn, context=""): Lists all products from the database with search functionality. Each listing can be expanded to reveal detailed product information and images.
+
+show_product_details_popup(product): Creates an expanded view for product details, providing a more in-depth look at individual product attributes.
+
+load_custom_css(): Injects custom CSS to enhance the styling of the Streamlit components, ensuring the application's visual appeal aligns with the ReLife brand.
+
     - `utils.py`: Includes utility functions, like CSS loader for styling.
     - `logo.png`: The app's logo displayed in the UI.
     - `users.db`: SQLite database file containing user and product data.
