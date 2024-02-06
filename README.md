@@ -45,22 +45,28 @@ show_product_details_popup(product): Creates an expanded view for product detail
 
 load_custom_css(): Injects custom CSS to enhance the styling of the Streamlit components, ensuring the application's visual appeal aligns with the ReLife brand.
 
-    - `utils.py`: Includes utility functions, like CSS loader for styling.
+    - `utils.py`:
+This script encompasses a set of utility functions designed to augment the ReLife application's user interface and backend processing capabilities. It provides the following features:
+local_css(file_name): Applies custom CSS to the Streamlit application for a more tailored look and feel by injecting the contents of a given CSS file.
+
+generate_mock_transaction_data(locations, products, max_count): Simulates transaction data for demonstration purposes. This function generates random buy and sell counts for a list of products across different locations.
+
+find_most_frequent_items(df): Aggregates transaction data to find the most frequently bought and sold items at each location. It's useful for identifying trends and popular items in inventory management.
+
+plot_most_frequent_transactions(df): Utilizes matplotlib to create visualizations for the most frequently transacted items, helping in quick and easy interpretation of data trends.
+
+get_expiry_status(expiry_date_str): Evaluates the expiry status of products by comparing the expiry date to the current date and returns a formatted string indicating if the product is expired or expiring soon.
+
+detect_device_type(): Determines the type of device the Streamlit app is being viewed on, based on the user agent string. This can be useful for responsive design considerations within the app.
+
     - `logo.png`: The app's logo displayed in the UI.
     - `users.db`: SQLite database file containing user and product data.
     - `style.css`: Custom CSS styles for the app's UI.
     - `requirements.txt`: Lists all Python dependencies required to run the app.
-6. **Installation and Setup**: Instructions on how to set up and run your app locally. This should include steps like cloning the repository, installing dependencies listed in `requirements.txt`, and commands to run the app.
-7. **Usage**: A brief guide on how to use the app, possibly with screenshots or GIFs for clarity.
-8. **Contributing**: Guidelines for how others can contribute to the project.
-9. **License**: Information about the project's license.
+6. **Installation and Setup**: Clone the repository, install the dependencies listed in `requirements.txt`. Then go to Terminal (Mac) or CMD (Windows), navigate the folder where you have cloned this repository. Type "streamlit run main.py"
 
 ### Description for main.py
 
 For the `main.py` file, here's a concise description that can be integrated into the README under the Component Descriptions section:
 
 - `main.py`: This is the core file of the ReLife app, orchestrating the app's workflow. It initializes the database connection to `users.db`, setting up user, verification, and products tables. The script leverages Streamlit for the web interface, displaying a custom login form, product addition form, and admin views based on user authentication. It incorporates custom CSS for styling and supports dynamic content based on user roles, enhancing the user experience.
-
-### README Length
-
-A README file on GitHub can be as long or as short as necessary to convey the project's details effectively. The key is to balance comprehensiveness with brevity, ensuring that readers can quickly understand what your project does, how to set it up, and how to use it. Including the descriptions provided, structured appropriately within the README file, will help achieve this balance without making it unnecessarily long.
