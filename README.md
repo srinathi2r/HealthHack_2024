@@ -7,7 +7,12 @@
 5. **Component Descriptions**: Short descriptions for each component of your app.
     - `main.py`: This is the core file of the ReLife app, orchestrating the app's workflow. It initializes the database connection to users.db, setting up user, verification, and products tables. The script leverages Streamlit for the web interface, displaying a custom login form, product addition form, and admin views based on user authentication. It incorporates custom CSS for styling and supports dynamic content based on user roles, enhancing the user experience..
     - `database.py`: Manages database operations such as table creation and data manipulation.
-    - `authentication.py`: Contains logic for user authentication, including login and registration.
+    - `authentication.py`: 
+Email Verification: Through integration with the SendGrid API, this component sends out verification emails to new users. It ensures that user email addresses are valid and verified, enhancing the security and reliability of user accounts.
+Password Handling: Utilizes the bcrypt library to securely hash user passwords before storing them in the database. This practice safeguards user passwords against theft and unauthorized access.
+User Registration and Login: Provides functions to add new users to the database with hashed passwords and to verify login credentials. It ensures that only authenticated users can access their accounts.
+Verification Code Generation: Generates unique verification codes for email verification, employing uuid for code generation. This is crucial for the email verification process, ensuring a secure mechanism for confirming user emails.
+Email Verification Status Update: Updates the database to reflect the verification status of a user's email, further tying into the app's security measures.
     - `ui_components.py`: Defines the user interface components, such as forms and view functions.
     - `utils.py`: Includes utility functions, like CSS loader for styling.
     - `logo.png`: The app's logo displayed in the UI.
