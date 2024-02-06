@@ -17,8 +17,7 @@ create_products_table(conn): Constructs the products table to keep track of all 
 
 add_user_name_to_users_table(conn, user_name): A utility function added to update the users table to include a new user_name column, reflecting an enhancement in the user data model.
 
-    - `authentication.py`: 
-Email Verification: Through integration with the SendGrid API, this component sends out verification emails to new users. It ensures that user email addresses are valid and verified, enhancing the security and reliability of user accounts.
+    - `authentication.py`: Email Verification: Through integration with the SendGrid API, this component sends out verification emails to new users. It ensures that user email addresses are valid and verified, enhancing the security and reliability of user accounts.
 
 Password Handling: Utilizes the bcrypt library to securely hash user passwords before storing them in the database. This practice safeguards user passwords against theft and unauthorized access.
 User Registration and Login: Provides functions to add new users to the database with hashed passwords and to verify login credentials. It ensures that only authenticated users can access their accounts.
@@ -45,8 +44,7 @@ show_product_details_popup(product): Creates an expanded view for product detail
 
 load_custom_css(): Injects custom CSS to enhance the styling of the Streamlit components, ensuring the application's visual appeal aligns with the ReLife brand.
 
-    - `utils.py`:
-This script encompasses a set of utility functions designed to augment the ReLife application's user interface and backend processing capabilities. It provides the following features:
+    - `utils.py`: This script encompasses a set of utility functions designed to augment the ReLife application's user interface and backend processing capabilities. It provides the following features:
 local_css(file_name): Applies custom CSS to the Streamlit application for a more tailored look and feel by injecting the contents of a given CSS file.
 
 generate_mock_transaction_data(locations, products, max_count): Simulates transaction data for demonstration purposes. This function generates random buy and sell counts for a list of products across different locations.
