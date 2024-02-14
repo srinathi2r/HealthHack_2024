@@ -65,5 +65,5 @@ A collection of utility functions to enhance UI and processing capabilities.
 - `requirements.txt`: Dependencies required for the app.
 
 ### 6. Installation and Setup
-Clone the repository, install the dependencies listed in `requirements.txt`. Then go to Terminal (Mac) or CMD (Windows), navigate the folder where you have cloned this repository. Type "streamlit run main.py"
+Clone the repository, install the dependencies listed in `requirements.txt`. Then go to Terminal (Mac) or CMD (Windows), navigate to the folder where you have cloned this repository. Type "streamlit run main.py"
 
